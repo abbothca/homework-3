@@ -3,15 +3,18 @@
 /* ---------------- Task 1 -------------------  */
 console.log(" %c--------------- Task #1 ---------------", "color: violet;")
 let isNumb = false;
-let userTrays = 0;
+let userTries = 0;
+let userNumber = undefined;
+
 
 do {
-    let userNumber = 3.4;
-    // let userNumber = prompt("Please, enter the number:");
-    userTrays++;
+    // let userNumber = 3.4;
+    userNumber = prompt("Please, enter the number:");
+    userTries++;
     console.log(`You have entered a value "${userNumber}"`);
 
-    if (!isNaN(userNumber) && userNumber !== "") {  // isNaN("") -> "0"
+    // if (!isNaN(userNumber) && userNumber !== "" && userNumber !== true && userNumber !== false) {  // false -> "" -> "0"; true -> 1
+    if (!isNaN(userNumber) && !isNaN(parseFloat(userNumber))) {  // to float -> isNaN
         console.log(`Even numbers from the interval ( 0; abs(${userNumber}) ):`);
         if (userNumber >= 2) {
             let smallestInteger = Math.floor(userNumber);
@@ -52,22 +55,22 @@ do {
 
         isNumb = true;
     } else {
-        if (userTrays >= 3) {
+        if (userTries >= 3) {
             console.log(" %c Sorry! Game is over :-((( You didn't enter a number", "color: red;");
-            break;
+            isNumb = true;
+           // break;
         }
 
         console.warn("Error! Please enter the number!");
     }
-} while (!isNumb && userTrays < 4);
+} while (!isNumb);
 
 /* ---------------- Task 2 -------------------  */
 console.log(" %c--------------- Task #2 ---------------", "color: violet;")
 
 const maxNumber = 10;
 
-
-if (!isNaN(maxNumber) && maxNumber > 0) {
+if (!isNaN(parseInt(maxNumber)) && maxNumber > 0) { // isNaN(true) = isNaN (1) = false
     for (let i = 1; i <= maxNumber; i++) {
         let remainder5 = i % 5;
         let remainder3 = i % 3;
@@ -101,6 +104,8 @@ if (!isNaN(maxNumber) && maxNumber > 0) {
                 }
         */
     }
+} else {
+    console.warn(`Not correct start data! [${maxNumber}] is not a positive integer!`)
 }
 
 /* ---------------- Task 3 -------------------  */
