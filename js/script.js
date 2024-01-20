@@ -1,11 +1,13 @@
 "use strict";
 
-/* ---------------- Завдання 1 -------------------  */
+/* ---------------- Task 1 -------------------  */
+console.log(" %c--------------- Task #1 ---------------", "color: violet;")
 let isNumb = false;
 let userTrays = 0;
 
 do {
-    let userNumber = prompt("Please, enter the number:");
+    let userNumber = 3.4;
+    // let userNumber = prompt("Please, enter the number:");
     userTrays++;
     console.log(`You have entered a value "${userNumber}"`);
 
@@ -50,7 +52,7 @@ do {
 
         isNumb = true;
     } else {
-        if (userTrays >=3 ) {
+        if (userTrays >= 3) {
             console.log(" %c Sorry! Game is over :-((( You didn't enter a number", "color: red;");
             break;
         }
@@ -58,3 +60,48 @@ do {
         console.warn("Error! Please enter the number!");
     }
 } while (!isNumb && userTrays < 4);
+
+/* ---------------- Task 2 -------------------  */
+console.log(" %c--------------- Task #2 ---------------", "color: violet;")
+
+const maxNumber = 10;
+
+
+if (!isNaN(maxNumber) && maxNumber > 0) {
+    for (let i = 1; i <= maxNumber; i++) {
+        let remainder5 = i % 5;
+        let remainder3 = i % 3;
+        // v2 with switch/case 
+        switch (true) {
+
+            case (remainder5 === 0 && remainder3 === 0):
+                console.log("FizzBuzz");
+                break;
+            case (remainder5 !== 0 && remainder3 === 0):
+                console.log("Fizz");
+                break;
+            case (remainder5 === 0 && remainder3 !== 0):
+                console.log("Buzz");
+                break;
+            default:
+                console.log(i);
+        };
+        /*
+        // v2 with if() {} else {} 
+        if ((remainder3 === 0) && (remainder5 !== 0)) {
+            console.log("Fizz");
+        } else
+            if ((remainder5 === 0) && (remainder3 !== 0)) {
+                console.log("Buzz");
+            } else
+                if ((remainder3 === 0) && (remainder5 === 0)) {
+                    console.log("FizzBuzz");
+                } else {
+                    console.log(i);
+                }
+        */
+    }
+}
+
+/* ---------------- Task 3 -------------------  */
+console.log(" %c--------------- Task #3 ---------------", "color: violet;")
