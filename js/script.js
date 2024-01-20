@@ -9,12 +9,12 @@ let userNumber = undefined;
 
 do {
     // let userNumber = 3.4;
-    userNumber = prompt("Please, enter the number:");
+    userNumber = prompt("Please, enter some number:");
     userTries++;
     console.log(`You have entered a value "${userNumber}"`);
 
     // if (!isNaN(userNumber) && userNumber !== "" && userNumber !== true && userNumber !== false) {  // false -> "" -> "0"; true -> 1
-    if (!isNaN(userNumber) && !isNaN(parseFloat(userNumber))) {  // to float -> isNaN
+    if (!isNaN(userNumber) && !isNaN(+userNumber)) {  // to float -> isNaN
         console.log(`Even numbers from the interval ( 0; abs(${userNumber}) ):`);
         if (userNumber >= 2) {
             let smallestInteger = Math.floor(userNumber);
@@ -119,21 +119,26 @@ let stringLength = string.length;
 
 // for every string
 for (let i = 0; i<= stringLength-1; i++) {
-    if (+string[i] < 5) {
+    let currentChar = string[i];
+    if (+currentChar < 5) {
         result = `${result}0`
-    } else if (+string[i] >= 5 ) {
+    } else if (+currentChar >= 5 ) {
         result = `${result}1`;
     } else {
-        result = `${result}${string[i]}`;
+        result = `${result}${currentChar}`;
     }
 }
 
 // if we need only strings of numbers we can check some conditions
-if(parseInt(string) == string ) {
+// "-23efds" parseInt(-23efds)=-23 != -23efds; 
+// "-23" parseint(-23efds) == -23efds && -23efds != Math.abs(-23efds)
+if(parseInt(string) == string && string == Math.abs(+string) ) {
     console.log("You got it! You entered exactly what was needed!")
 } else {
-    console.log("It's so pity! You didn't underspend us... But don't worry! We can do something with your string");
+    console.log("It is such a pity! You didn't understand us... But don't worry! We can do something with your string");
 }
 
 console.log("string: ", string);
 console.log("result: ", result);
+
+console.log("_____________________________________")
