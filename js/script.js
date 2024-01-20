@@ -1,7 +1,7 @@
 "use strict";
 
 /* ---------------- Task 1 -------------------  */
-console.log(" %c--------------- Task #1 ---------------", "color: violet;")
+console.log("______________ Task #1 ______________");
 let isNumb = false;
 let userTries = 0;
 let userNumber = undefined;
@@ -66,7 +66,7 @@ do {
 } while (!isNumb);
 
 /* ---------------- Task 2 -------------------  */
-console.log(" %c--------------- Task #2 ---------------", "color: violet;")
+console.log("______________ Task #2 ______________");
 
 const maxNumber = 10;
 
@@ -106,7 +106,34 @@ if (!isNaN(parseInt(maxNumber)) && maxNumber > 0) { // isNaN(true) = isNaN (1) =
     }
 } else {
     console.warn(`Not correct start data! [${maxNumber}] is not a positive integer!`)
-}
+};
 
 /* ---------------- Task 3 -------------------  */
-console.log(" %c--------------- Task #3 ---------------", "color: violet;")
+console.log("______________ Task #3 ______________");
+
+// let string = '42559125';
+let string = prompt("Enter a string of numbers (for example 123467):");
+let result = "";
+
+let stringLength = string.length;
+
+// for every string
+for (let i = 0; i<= stringLength-1; i++) {
+    if (+string[i] < 5) {
+        result = `${result}0`
+    } else if (+string[i] >= 5 ) {
+        result = `${result}1`;
+    } else {
+        result = `${result}${string[i]}`;
+    }
+}
+
+// if we need only strings of numbers we can check some conditions
+if(parseInt(string) == string ) {
+    console.log("You got it! You entered exactly what was needed!")
+} else {
+    console.log("It's so pity! You didn't underspend us... But don't worry! We can do something with your string");
+}
+
+console.log("string: ", string);
+console.log("result: ", result);
