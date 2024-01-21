@@ -13,9 +13,9 @@ do {
     userTries++;
     console.log(`You have entered a value "${userNumber}"`);
 
-    // if (!isNaN(userNumber) && userNumber !== "" && userNumber !== true && userNumber !== false) {  // false -> "" -> "0"; true -> 1
+    // if (!isNaN(userNumber) && userNumber !== "" && userNumber !== true && userNumber !== false) {  // false <-> "" <-> "0"; true <-> 1
     if (!isNaN(userNumber) && !isNaN(+userNumber)) {  // to float -> isNaN
-        console.log(`Even numbers from the interval ( 0; abs(${userNumber}) ):`);
+        console.log(`Even numbers:`);
         if (userNumber >= 2) {
             let smallestInteger = Math.floor(userNumber);
             //__________________________________________________________________________________________
@@ -61,7 +61,7 @@ do {
            // break;
         }
 
-        console.warn("Error! Please enter the number!");
+        console.warn("Warning! Please enter the number!");
     }
 } while (!isNumb);
 
