@@ -68,41 +68,38 @@ do {
 /* ---------------- Task 2 -------------------  */
 console.log("______________ Task #2 ______________");
 
-const maxNumber = 10;
+const maxNumber = 100;
 
 if (!isNaN(parseInt(maxNumber)) && maxNumber > 0) { // isNaN(true) = isNaN (1) = false
     for (let i = 1; i <= maxNumber; i++) {
         let remainder5 = i % 5;
         let remainder3 = i % 3;
         // v2 with switch/case 
-        switch (true) {
+        // switch (true) {
 
-            case (remainder5 === 0 && remainder3 === 0):
-                console.log("FizzBuzz");
-                break;
-            case (remainder5 !== 0 && remainder3 === 0):
-                console.log("Fizz");
-                break;
-            case (remainder5 === 0 && remainder3 !== 0):
-                console.log("Buzz");
-                break;
-            default:
-                console.log(i);
-        };
-        /*
+        //     case (remainder5 === 0 && remainder3 === 0):
+        //         console.log("FizzBuzz");
+        //         break;
+        //     case (remainder5 !== 0 && remainder3 === 0):
+        //         console.log("Fizz");
+        //         break;
+        //     case (remainder5 === 0 && remainder3 !== 0):
+        //         console.log("Buzz");
+        //         break;
+        //     default:
+        //         console.log(i);
+        // };
+        
         // v2 with if() {} else {} 
-        if ((remainder3 === 0) && (remainder5 !== 0)) {
-            console.log("Fizz");
+        if (remainder3 === 0) {
+           (remainder5 !== 0) ? console.log("Fizz") : console.log("FizzBuzz");
         } else
-            if ((remainder5 === 0) && (remainder3 !== 0)) {
+            if (remainder5 === 0) {
                 console.log("Buzz");
-            } else
-                if ((remainder3 === 0) && (remainder5 === 0)) {
-                    console.log("FizzBuzz");
-                } else {
-                    console.log(i);
-                }
-        */
+            } else {
+                console.log(i);
+            }
+        
     }
 } else {
     console.warn(`Not correct start data! [${maxNumber}] is not a positive integer!`)
@@ -114,8 +111,16 @@ console.log("______________ Task #3 ______________");
 // let string = '42559125';
 let string = prompt("Enter a string of numbers (for example 123467):");
 let result = "";
+let result1 = "";
 
 let stringLength = string.length;
+
+// Спростила, записала через тернарний оператор, але якщо в рядку буде символ - не цифра, він заміниться на 1 
+for (let i = 0; i < stringLength; i++) {
+    // let currentChar = string[i];
+    result1 = (+string[i] < 5) ? `${result1}0` : `${result1}1`;
+};
+console.log("Результат для тернарного оператора: ",result1);
 
 // for every string
 for (let i = 0; i<= stringLength-1; i++) {
