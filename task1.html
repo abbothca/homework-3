@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./favicon/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./favicon/favicon-16x16.png"
+    />
+    <link rel="manifest" href="./favicon/site.webmanifest" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <script src="./js/task1.js" defer></script>
+    <title>Завдання 3.1</title>
+  </head>
+
+  <body>
+    <header class="header">
+      <h1>Home work #3</h1>
+      <p class="autor">Хомич Любов</p>
+    </header>
+    <main class="main">
+      <h2>Цикли та умовні конструкції</h2>
+      <article>
+        <h3>1. Вивід парних чисел</h3>
+        <p>
+          Напишіть код який бере значення від користувача (<code>prompt</code>)
+          і виводить у консоль всі парні числа, що менші за задане. Наприклад,
+          якщо користувач ввів число <code>10</code>, програма має вивести
+          наступне: <code>2, 4, 6, 8</code>. Додаткові вимоги:
+        </p>
+        <p>Реалізуйте рішення 2 способами:</p>
+        <ul class="menu">
+          <li>з використанням циклу for та while</li>
+          <li>
+            Код має перевіряти, чи значення у змінній є числом. Якщо воно не є
+            числом, програма має вивести повідомлення про помилку.
+          </li>
+        </ul>
+        <p>Приклад виконання програми:</p>
+        <pre>
+          <code>
+            let value = prompt(); // 10
+
+            // Вивід у консоль
+            2
+            4
+            6
+            8
+          </code>
+        </pre>
+        <p>Приклад з помилкою</p>
+        <pre>
+          <code>
+            let value = prompt(); // 'abc' - Не тип даних Number
+
+            // Вивід у консоль
+            Помилка: введіть число
+          </code>
+        </pre>
+      </article>
+
+      <article>
+        <h2>Звіт</h2>
+        <p>
+          Файл зі скриптами:
+        </p>
+        <p>
+          <a href="./js/task1.js" target="_blank">Скрипт 1</a>
+        </p>
+        <p>
+          <strong>Завдання 1</strong>
+        </p>
+        <hr />
+        <p>
+          Однієї умови <code>!isNaN(userNumber)</code> недостатньо (додаю
+          скрін), тому все таки лишаю по-своєму. Щодо зауваження, що можна
+          зробити перевірку на
+          <code>if (userNumber !== null && !isNaN(userNumber))</code> - цього не
+          достатньо. Дякую за наводку - дослідила детальніше (так, я була не
+          достатньо уважна, можливість значення <code>null</code> не врахувала),
+          тим не менше мій кейс з порожнім рядком перевірка на
+          <code>null</code> не вирішує.
+        </p>
+        <p>
+          <code>prompt("...")</code> надає користувачу дві кнопки для натиснення
+          - <code>OK</code> або <code>Cancel/[Скасувати]</code>
+        </p>
+        <figure>
+          <img src="./images/task-11.jpg" alt="" />
+          <fieldset>
+            Вигляд вікна згенерованого через <code>prompt</code>
+          </fieldset>
+        </figure>
+        <p>
+          Натиснена <code>OK</code> може повернути <code>""</code>, якщо в поле
+          вводу нічого не було введено.
+        </p>
+        <p>
+          Натиснена <code>Cancel/[Скасувати]</code> дійсно повертає
+          <code>null</code> чи введено, щось чи ні.
+        </p>
+        <figure>
+          <img src="./images/task-1.jpg" alt="" />
+          <fieldset>
+            Консоль, при умові <code>!isNaN(userNumber)</code>
+          </fieldset>
+        </figure>
+        <p>
+          Порожній рядок, як і <code>null</code> не "ловляться" черезу
+          <code>!isNaN(userNumber)</code>.
+        </p>
+        <p>
+          Для зручності перевірки обох випадків втавила код двічі - один раз
+          через <code>for (...) {...}</code>, інший - через
+          <code>while (...) {...}</code>
+        </p>
+        <p>
+          Цикл, який змушує користувача вводити значення, поки воно задовільнить
+          умову - прибрала.
+        </p>
+        <p>
+          Допоміг Google і мануально підібрала таку умову -
+          <code>!isNaN(parseFloat(userNumber)) </code>, бо
+          <code>parseFloat(userNumber) </code> - повертає значення
+          <code>NaN</code> для
+          <code>null, "", true, false, undefined, NaN</code>.
+        </p>
+        <p>
+          Ще над роботою над третім завданням вигадала таку умову
+          <code>if(userNumber) </code>, бо поверне
+          <code>null</code> для всіх випадків із <code>[userNumber = null] / [userNumber = ""]</code>. Ну але ще треба перевіряти чи той рядок число... Тому лишила <code>!isNaN(parseFloat(userNumber)) </code> - так лаконічніше.
+        </p>
+        <p>
+          Перевірку на дріб, на від'ємне значення - не прибрала. Я не вийшла за
+          тему заняття. А у мене не буде іншої нагоди запитати поради.
+        </p>
+      </article>
+    </main>
+  </body>
+</html>

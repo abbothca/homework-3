@@ -1,138 +1,73 @@
 <!DOCTYPE html>
 <html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./favicon/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./favicon/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./favicon/favicon-16x16.png"
+    />
+    <link rel="manifest" href="./favicon/site.webmanifest" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>Home work #3</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="apple-touch-icon" sizes="180x180" href="./favicon/apple-touch-icon.png" />
-  <link rel="icon" type="image/png" sizes="32x32" href="./favicon/favicon-32x32.png" />
-  <link rel="icon" type="image/png" sizes="16x16" href="./favicon/favicon-16x16.png" />
-  <link rel="manifest" href="./favicon/site.webmanifest" />
-  <link rel="stylesheet" href="./css/style.css" />
-  <script src="./js/script.js"></script>
-  <title>Home work #2</title>
-</head>
-
-<body>
-  <header class="header">
-    <h1>Home work #2</h1>
-    <p class="autor">Хомич Любов</p>
-  </header>
-  <main class="main">
-    <h2>Цикли та умовні конструкції</h2>
-    <article>
-      <h3>1. Вивід парних чисел</h3>
-      <p>
-        Напишіть код який бере значення від користувача (<code>prompt</code>) і виводить у консоль всі парні числа, що
-        менші за задане.
-        Наприклад, якщо користувач ввів число <code>10</code>, програма має вивести наступне: <code>2, 4, 6, 8</code>.
-        Додаткові вимоги:
-      </p>
-      <p>
-        Реалізуйте рішення 2 способами:
-      </p>
-      <ul class="menu">
-        <li>з використанням циклу for та while</li>
-        <li>Код має перевіряти, чи значення у змінній є числом. Якщо воно не є числом, програма має вивести повідомлення
-          про помилку.</li>
-      </ul>
-      <p>
-        Приклад виконання програми:
-      </p>
-      <pre>
-          <code>
-            let value = prompt(); // 10
-
-            // Вивід у консоль
-            2
-            4
-            6
-            8
-          </code>
-        </pre>
-      <p>
-        Приклад з помилкою
-      </p>
-      <pre>
-          <code>
-            let value = prompt(); // 'abc' - Не тип даних Number
-
-            // Вивід у консоль
-            Помилка: введіть число
-          </code>
-        </pre>
-    </article>
-    <article>
-      <h3>2. Задача FizzBuzz</h3>
-      <p>
-        Напишіть код який виводить в консоль значення від 1 до 100, але замість чисел кратних 3 має виводитись
-        <code>Fizz</code>,
-        замість значень кратних 5 - <code>Buzz</code>, а замість значень кратних і 3 і 5 - <code>FizzBuzz</code>.
-      </p>
-      <article>
-        <h3>3. Додаткова задача*</h3>
-        <p>
-          Маючи рядок цифр, ви повинні замінити будь-яку цифру нижче 5 на «0», а будь-яку цифру 5 і вище на «1».
-        </p>
-        <pre>
-            <code>
-              let string = '42559125';
-              let result = '';
-
-              //...тут ваш код
-
-              console.log(result); // '00111001'
-            </code>
-          </pre>
-      </article>
+  <body>
+    <header class="header">
+      <h1>Home work #3</h1>
+      <p class="autor">Хомич Любов</p>
+    </header>
+    <main class="main">
+      <h2>Цикли та умовні конструкції</h2>
 
       <article>
         <h2>Звіт</h2>
         <p>
-          Файл зі скриптами <a href="https://github.com/abbothca/homework-3/blob/main/js/script.js">script.js</a>
+          <a href="./task1.html" target="_blank">Завдання 1</a>
         </p>
         <p>
-          <strong>Завдання 1</strong>
-        </p>
-        <hr />
-        <p>
-          Спробувала написати умову, яка б перевіряла чи введено число, якщо ні - <code>console.warn</code>, якщо ж так
-          - визначаємо чи додатнє, чи від'ємне. Парні числа виводжу з проміжку <code>[-x ; 0)</code> або <code>( 0; x ]</code> відповідно.
+          <a href="./task2.html" target="_blank">Завдання 2</a>
         </p>
         <p>
-          Якщо введене число з проміжка <code>(-2; 2)</code> - очевидно, парних чисел, які задовіьняють умові нема.
+          <a href="./task3.html" target="_blank">Завдання 3</a>
         </p>
         <p>
-          Обмежила користувача трьома спробами.
+          Файли зі скриптами:
         </p>
         <p>
-          <strong>Завдання 2</strong>
-        </p>
-        <hr />
-        <p>
-          Спробувала занести значення числа <code>maxNumber</code> в константу (воно в моїй програмі не повинне мінятися).  
+          <a href="./js/task1.js" target="_blank">Скрипт 1</a>
         </p>
         <p>
-          Теж написала умову перевірки чи в <code>maxNumber</code> міститься додатнє ціле число.
+          <a href="./js/task2.js" target="_blank">Скрипт 2</a>
         </p>
         <p>
-          Зробила двома способами, один закоментований. Так, пам'ятаю, що <code>switch / case</code> так краще не використовувати, хотіла тільки спробувати чи зрозуміла логіку.
+          <a href="./js/task3.js" target="_blank">Скрипт 3</a>
         </p>
         <p>
-          <strong>Завдання 3</strong>
-        </p>
-        <hr />
-        <p>
-          Дозволила користувачу вводити рядок цифр. Міняю цифри за вказаним правилом, інші символи не чіпаю.
+          Старалася максимально розділити все що 'не екстра' з тим, що 'екстра'.
+          Якщо код має містити строго тільки те, що в завданні (малося на увазі)
+          - мені сумно, але наступний раз врахую.
         </p>
         <p>
-          Якщо що - старалась написати умову, яку можна було б використати, щоб відсіяти "неправильно" введені дані.
-        </p>
-        <p>
-          <strong>P.S.</strong> Умов так багато, трохи плутала з переведенням типів - могла наплутати з умовами перевірки коректності даних. Або використала не найлегші чи не найочевидніші умови... Буду вдячна за підказки і зауваження.
+          Коротше: буду вдячна, якщо буде якесь рев'ю на те, що екстра. Якщо є зауваження чи пропозиції - буду щиро вдячна. Але
+          якщо не можна в межах домашки ставити запитання чи просити про
+          пояснення - більш не буду, постараюся писати в особисті повідомлення,
+          якщо виникатимуть питання.
         </p>
       </article>
-  </main>
-</body>
-
+    </main>
+  </body>
 </html>
